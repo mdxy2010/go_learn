@@ -1,0 +1,9 @@
+1.  在go 语言里, int 和int32 会被当作两种不同的类型, 编译器不会作自动类型转换
+	如下是错误的用法:
+
+	var value2 int32
+	value1 := 64
+	// value1将会被自动推导为int类型
+	value2 = value1 // 编译错误
+	编译错误类似于:
+	cannot use value1 (type int) as type int32 in assignment。
