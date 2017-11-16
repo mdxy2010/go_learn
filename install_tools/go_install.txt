@@ -1,0 +1,77 @@
+go install golang.org/x/tools/*
+
+1.	vim 安装vim-go 打造GOLANG 专用IDE 
+
+第一步：安装Vundle
+
+    根据Vundle的安装说明，首先安装Vundle：
+    $ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+    然后对.vimrc进行配置，将Vundle的相关配置置在最开始处，下面只显示关于Vundle的相关配置：
+
+对.vimrc进行配置，将Vundle的相关配置置在最开始处，下面只显示关于Vundle的相关配置（详细参考Vundle的README.MD)：
+
+    " -------------  
+    " Vundle  
+    " https://github.com/gmarik/Vundle.vim  
+    " -------------  
+      
+    set nocompatible              " be iMproved, required  
+    filetype off                  " required  
+      
+    " set the runtime path to include Vundle and initialize  
+    set rtp+=~/.vim/bundle/Vundle.vim  
+    call vundle#begin()  
+    " alternatively, pass a path where Vundle should install plugins  
+    "call vundle#begin('~/some/path/here')  
+      
+    " let Vundle manage Vundle, required  
+    Plugin 'gmarik/Vundle.vim'  
+      
+    " The following are examples of different formats supported.  
+    " Keep Plugin commands between vundle#begin/end.  
+    " plugin on GitHub repo  
+    ""Plugin 'tpope/vim-fugitive'  
+    " plugin from http://vim-scripts.org/vim/scripts.html  
+    ""Plugin 'L9'  
+    " Git plugin not hosted on GitHub  
+    ""Plugin 'git://git.wincent.com/command-t.git'  
+    " git repos on your local machine (i.e. when working on your own plugin)  
+    ""Plugin 'file:///home/gmarik/path/to/plugin'  
+    " The sparkup vim script is in a subdirectory of this repo called vim.  
+    " Pass the path to set the runtimepath properly.  
+    ""Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}  
+    " Avoid a name conflict with L9  
+    ""Plugin 'user/L9', {'name': 'newL9'}  
+      
+    " Install Vim-go  
+    Plugin 'fatih/vim-go'  
+      
+    " All of your Plugins must be added before the following line  
+    call vundle#end()            " required  
+    filetype plugin indent on    " required  
+    " To ignore plugin indent changes, instead use:  
+    "filetype plugin on  
+    "  
+    " Brief help  
+    " :PluginList       - lists configured plugins  
+    " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate  
+    " :PluginSearch foo - searches for foo; append `!` to refresh local cache  
+    " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal  
+    "  
+    " see :h vundle for more details or wiki for FAQ  
+    " Put your non-Plugin stuff after this line
+
+第二步：安装vim-go (详细查看vim-go的README.MD)
+
+    git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go 注意路径
+    在上述~/.vimrc里增加下面一行。
+    Plugin 'fatih/vim-go'
+
+    至此安装完成。
+
+
+2.	安装go tools 工具
+	下载go tools 源码包 
+	git clone https://github.com/golang/tools
+	go install golang.org/x/tools/cmd/godex
